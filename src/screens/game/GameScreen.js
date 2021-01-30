@@ -4,7 +4,7 @@ import {Text} from 'react-native-elements';
 import Heading1Text from '../../components/Heading1Text';
 import gameScreenStyles from './gameScreenStyles';
 
-export default GameScreen = (props) => {
+const GameScreen = (props) => {
   const {route} = props;
   const {playerCount, winningPoint} = route.params;
   return (
@@ -15,3 +15,5 @@ export default GameScreen = (props) => {
     </View>
   );
 };
+
+export default GameScreen;

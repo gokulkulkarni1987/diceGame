@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'react-native-elements';
+import {Button} from 'react-native-elements';
 
-export default ButtonComponent = (props) => {
+const ButtonComponent = (props) => {
   return (
     <Button
       title={props.title}
@@ -9,5 +9,7 @@ export default ButtonComponent = (props) => {
       loading={props.loading}
       onPress={props.onPress}
     />
-  )
-}
+  );
+};
+
+export default ButtonComponent;

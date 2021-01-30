@@ -2,7 +2,7 @@ import React from 'react';
 import {Input} from 'react-native-elements';
 import componentStyles from './componentStyles';
 
-export default InputField = (props) => {
+const InputField = (props) => {
   return (
     <Input
       placeholder={props.placeholder}
@@ -13,3 +13,5 @@ export default InputField = (props) => {
     />
   );
 };
+
+export default InputField;

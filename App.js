@@ -14,16 +14,17 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Homescreen from './src/screens/home/HomeScreen';
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
+    <SafeAreaProvider style={styles.mainParentStyle}>
       <SafeAreaView />
       <View style={styles.mainParentStyle}>
-        <Text>Hello!!!</Text>
+        <Homescreen />
       </View>
-    </>
+    </SafeAreaProvider>
   );
 };
 

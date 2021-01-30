@@ -9,6 +9,7 @@ export default InputField = (props) => {
       label={props.label}
       style={[props.style, styles.inputStyle]}
       inputContainerStyle={styles.inputContainerStyle}
+      onChangeText={props.onChangeText}
     />
   );
 };

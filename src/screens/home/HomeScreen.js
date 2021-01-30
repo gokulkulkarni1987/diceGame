@@ -4,7 +4,7 @@ import { Input } from 'react-native-elements';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import InputField from '../../components/InputField';
-import styles from './styles';
+import homeScreenStyles from './homeScreenStyles';
 
 export default HomeScreen = (props) => {
 
@@ -12,6 +12,10 @@ export default HomeScreen = (props) => {
   const [winningPoint, setWinningPoint] = useState(0);
 
   const startTheGame = (props) => {
+    if (!playerCount || !winningPoint) {
+      alert('Please enter all details');
+      return;
+    }
     props.navigation.navigate('Game', {
       playerCount,
       winningPoint
@@ -27,12 +31,12 @@ export default HomeScreen = (props) => {
   }
 
   return (
-    <View style={styles.parentStyle}>
-      <Heading1Text>
+    <View style={homeScreenStyles.parentStyle}>
+      <Heading1Text style={homeScreenStyles.headingTextStyle}>
         Welcome to Dice Game
       </Heading1Text>
-      <InputField placeholder='Players' label='Enter Number of Players' style={styles.inputFieldStyle} onChangeText={onPlayerCountChange}/>
-      <InputField placeholder='Winning Points' label='Enter the Winning points' style={styles.inputFieldStyle} onChangeText={onWinningPointsChange}/>
+      <InputField placeholder='Players' label='Enter Number of Players' style={homeScreenStyles.inputFieldStyle} onChangeText={onPlayerCountChange}/>
+      <InputField placeholder='Winning Points' label='Enter the Winning points' style={homeScreenStyles.inputFieldStyle} onChangeText={onWinningPointsChange}/>
       <ButtonComponent title='Start the Game' onPress={() => startTheGame(props)} />
     </View>
   )

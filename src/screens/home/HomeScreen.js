@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
+import {useDispatch} from 'react-redux';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import InputField from '../../components/InputField';
+import {LET_THE_GAME_BEGIN} from './HomeActions';
 import homeScreenStyles from './homeScreenStyles';
 
 const HomeScreen = (props) => {
   const [playerCount, setPlayerCount] = useState(0);
   const [winningPoint, setWinningPoint] = useState(0);
+  const dispatch = useDispatch();
 
   const startTheGame = (propsRef) => {
     if (!playerCount || !winningPoint) {
@@ -17,6 +20,13 @@ const HomeScreen = (props) => {
     propsRef.navigation.navigate('Game', {
       playerCount,
       winningPoint,
+    });
+    dispatch({
+      type: LET_THE_GAME_BEGIN,
+      payload: {
+        playerCount,
+        winningPoint,
+      },
     });
   };
 

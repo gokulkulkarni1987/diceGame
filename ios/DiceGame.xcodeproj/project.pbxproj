@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DiceGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DiceGameTests.m */; };
+		06C6124641A84BA49B7081EA /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEE4775F79984D899857AB97 /* Feather.ttf */; };
+		0A0C735322EF491EBAE90681 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A39F5A3A43D41C6B22DEF92 /* FontAwesome.ttf */; };
+		0A4060AB25744D36AA51195A /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD0DBBFF5A84C7A93887B9B /* Octicons.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -15,11 +18,24 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* DiceGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DiceGameTests.m */; };
+		2FB87028AE564964BFF17D42 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A8AF22E1824E9191D6DCEE /* Foundation.ttf */; };
 		3671E6A4783E6D7F8D66C5DC /* libPods-DiceGame-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0B3BC080ADB1601D662526 /* libPods-DiceGame-tvOSTests.a */; };
+		3E9C68F3200C463B830C43D3 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BABF03BD414E36AEB14910 /* Entypo.ttf */; };
 		435E730793898447CD653198 /* libPods-DiceGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A420E65DED4A42C34057E59C /* libPods-DiceGame.a */; };
+		5685DB2367B245A2828E7457 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD6733F287F47CA957DAAEE /* MaterialCommunityIcons.ttf */; };
+		80B0C24550C541E9B7BA3CCB /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17CB1637B5544217A4FBE35E /* FontAwesome5_Solid.ttf */; };
+		80B39555D1A64924B772C98E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E78EF1C544C475C97FAAEEF /* EvilIcons.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84A01107ECCA4D29BE5B7356 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AFFFDF8E36245FB8B579E85 /* SimpleLineIcons.ttf */; };
+		8E14F06373A94B1B99A51705 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E35B086CFA847F29572FB34 /* AntDesign.ttf */; };
 		8EC1212131A747CE4E09DC5C /* libPods-DiceGame-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFE9134120748525EB96DF3 /* libPods-DiceGame-tvOS.a */; };
+		93D666A776B349FCAFE638CD /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BEE414953B042CA94C5879E /* FontAwesome5_Brands.ttf */; };
+		9FE7CA6A86A04FCF887065D2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78EF372C31E547E784CA5611 /* Zocial.ttf */; };
+		D611F4212DC642A493204798 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FCA214CCE4CE5A17D1038 /* Ionicons.ttf */; };
+		DC9A84D4B2CF40AF9C4540A5 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6FACDB76A8943908018C1D3 /* FontAwesome5_Regular.ttf */; };
+		DF32B05F3BA74346A87C3863 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73EB7C869B5740DC9F1DEC67 /* Fontisto.ttf */; };
 		E45449B9DAEB03704E79B5B6 /* libPods-DiceGame-DiceGameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B998BDF89B901B78231152 /* libPods-DiceGame-DiceGameTests.a */; };
+		FE41C88A61F042C4B9B3E4A6 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18211AFC752D4D3599241199 /* MaterialIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,23 +66,39 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DiceGame/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DiceGame/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DiceGame/main.m; sourceTree = "<group>"; };
+		17CB1637B5544217A4FBE35E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		18211AFC752D4D3599241199 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* DiceGame-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DiceGame-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* DiceGame-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiceGame-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		391388008CF61CE068EA59EE /* Pods-DiceGame-DiceGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-DiceGameTests.release.xcconfig"; path = "Target Support Files/Pods-DiceGame-DiceGameTests/Pods-DiceGame-DiceGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		56BABF03BD414E36AEB14910 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		5A0B3BC080ADB1601D662526 /* libPods-DiceGame-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DiceGame-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEE414953B042CA94C5879E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		5EF1769E8AF38EEBCEB8B578 /* Pods-DiceGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame.release.xcconfig"; path = "Target Support Files/Pods-DiceGame/Pods-DiceGame.release.xcconfig"; sourceTree = "<group>"; };
 		5FFE9134120748525EB96DF3 /* libPods-DiceGame-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DiceGame-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D9FAE6351578F3933AF190 /* Pods-DiceGame-DiceGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-DiceGameTests.debug.xcconfig"; path = "Target Support Files/Pods-DiceGame-DiceGameTests/Pods-DiceGame-DiceGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A0FCA214CCE4CE5A17D1038 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		6AFFFDF8E36245FB8B579E85 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		6F50987FB75B011AE710E97B /* Pods-DiceGame-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-DiceGame-tvOSTests/Pods-DiceGame-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73EB7C869B5740DC9F1DEC67 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		78EF372C31E547E784CA5611 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7B5F35C923CE4F590E1D2494 /* Pods-DiceGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame.debug.xcconfig"; path = "Target Support Files/Pods-DiceGame/Pods-DiceGame.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DiceGame/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89B998BDF89B901B78231152 /* libPods-DiceGame-DiceGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DiceGame-DiceGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD6733F287F47CA957DAAEE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		8E35B086CFA847F29572FB34 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		97A8AF22E1824E9191D6DCEE /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		9A39F5A3A43D41C6B22DEF92 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		9E78EF1C544C475C97FAAEEF /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		A420E65DED4A42C34057E59C /* libPods-DiceGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DiceGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCF7B14A2E215CF6A0C083C /* Pods-DiceGame-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-DiceGame-tvOSTests/Pods-DiceGame-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF5B61B4BF5A561CB3F31577 /* Pods-DiceGame-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-tvOS.release.xcconfig"; path = "Target Support Files/Pods-DiceGame-tvOS/Pods-DiceGame-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D4495A1DE00E6F6CCA4641E9 /* Pods-DiceGame-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiceGame-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-DiceGame-tvOS/Pods-DiceGame-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DEE4775F79984D899857AB97 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		E6FACDB76A8943908018C1D3 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FCD0DBBFF5A84C7A93887B9B /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +197,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C297D46B2696B68A33A04A90 /* Pods */,
+				ABEF3F02C2CF4BFB9B500D65 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -182,6 +215,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		ABEF3F02C2CF4BFB9B500D65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E35B086CFA847F29572FB34 /* AntDesign.ttf */,
+				56BABF03BD414E36AEB14910 /* Entypo.ttf */,
+				9E78EF1C544C475C97FAAEEF /* EvilIcons.ttf */,
+				DEE4775F79984D899857AB97 /* Feather.ttf */,
+				9A39F5A3A43D41C6B22DEF92 /* FontAwesome.ttf */,
+				5BEE414953B042CA94C5879E /* FontAwesome5_Brands.ttf */,
+				E6FACDB76A8943908018C1D3 /* FontAwesome5_Regular.ttf */,
+				17CB1637B5544217A4FBE35E /* FontAwesome5_Solid.ttf */,
+				73EB7C869B5740DC9F1DEC67 /* Fontisto.ttf */,
+				97A8AF22E1824E9191D6DCEE /* Foundation.ttf */,
+				6A0FCA214CCE4CE5A17D1038 /* Ionicons.ttf */,
+				8DD6733F287F47CA957DAAEE /* MaterialCommunityIcons.ttf */,
+				18211AFC752D4D3599241199 /* MaterialIcons.ttf */,
+				FCD0DBBFF5A84C7A93887B9B /* Octicons.ttf */,
+				6AFFFDF8E36245FB8B579E85 /* SimpleLineIcons.ttf */,
+				78EF372C31E547E784CA5611 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C297D46B2696B68A33A04A90 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +250,6 @@
 				6F50987FB75B011AE710E97B /* Pods-DiceGame-tvOSTests.debug.xcconfig */,
 				ABCF7B14A2E215CF6A0C083C /* Pods-DiceGame-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -342,6 +397,22 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8E14F06373A94B1B99A51705 /* AntDesign.ttf in Resources */,
+				3E9C68F3200C463B830C43D3 /* Entypo.ttf in Resources */,
+				80B39555D1A64924B772C98E /* EvilIcons.ttf in Resources */,
+				06C6124641A84BA49B7081EA /* Feather.ttf in Resources */,
+				0A0C735322EF491EBAE90681 /* FontAwesome.ttf in Resources */,
+				93D666A776B349FCAFE638CD /* FontAwesome5_Brands.ttf in Resources */,
+				DC9A84D4B2CF40AF9C4540A5 /* FontAwesome5_Regular.ttf in Resources */,
+				80B0C24550C541E9B7BA3CCB /* FontAwesome5_Solid.ttf in Resources */,
+				DF32B05F3BA74346A87C3863 /* Fontisto.ttf in Resources */,
+				2FB87028AE564964BFF17D42 /* Foundation.ttf in Resources */,
+				D611F4212DC642A493204798 /* Ionicons.ttf in Resources */,
+				5685DB2367B245A2828E7457 /* MaterialCommunityIcons.ttf in Resources */,
+				FE41C88A61F042C4B9B3E4A6 /* MaterialIcons.ttf in Resources */,
+				0A4060AB25744D36AA51195A /* Octicons.ttf in Resources */,
+				84A01107ECCA4D29BE5B7356 /* SimpleLineIcons.ttf in Resources */,
+				9FE7CA6A86A04FCF887065D2 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +500,8 @@
 		};
 		1A4918EE9F591B99275D06CC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -472,7 +544,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiceGame/Pods-DiceGame-resources.sh\"\n";
 			showEnvVarsInLog = 0;
@@ -681,7 +753,11 @@
 				);
 				INFOPLIST_FILE = DiceGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -701,7 +777,11 @@
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = DiceGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -722,7 +802,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DiceGame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -744,7 +827,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = DiceGame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -771,7 +857,10 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "DiceGame-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -799,7 +888,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "DiceGame-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -826,7 +918,11 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "DiceGame-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -853,7 +949,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "DiceGame-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -915,7 +1015,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
@@ -968,7 +1071,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",

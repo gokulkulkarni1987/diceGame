@@ -4,7 +4,7 @@ export default StyleSheet.create({
   inputFieldStyle: {marginTop: 10},
   parentStyle: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'stretch',
     backgroundColor: 'white',
     padding: 10,

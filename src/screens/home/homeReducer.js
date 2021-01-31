@@ -5,18 +5,18 @@ const INITIAL_STATE = {
   winningPoint: 0,
 };
 
-export default (state, action) => {
+export default (state = INITIAL_STATE, action) => {
   const {payload} = action;
   switch (action.type) {
     case LET_THE_GAME_BEGIN:
       state = {
         ...state,
-        winningPoint: payload.winningPoint,
-        playerCount: payload.playerCount,
+        winningPoint: parseInt(payload.winningPoint),
+        playerCount: parseInt(payload.playerCount),
       };
       break;
     default:
-      state = INITIAL_STATE;
+      state;
   }
   return state;
 };

@@ -50,15 +50,14 @@ const App = () => {
                   name="PlayersModal"
                   component={PlayersModalScreen}
                   options={{
-                    headerBackTitle: 'dismiss',
+                    title: 'Players',
                     headerLeft: null,
-                    headerRight: (object) => {
-                      console.log('=========> ', navigationRef);
+                    headerRight: () => {
                       return (
                         <Icon
                           name="close"
                           type="font-awesome"
-                          style={{padding: 10}}
+                          style={styles.closeModalIconStyle}
                           onPress={() => {
                             if (navigationRef) {
                               navigationRef.current.goBack();
@@ -80,6 +79,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   mainParentStyle: {flex: 1, justifyContent: 'center', alignItems: 'stretch'},
+  closeModalIconStyle: {padding: 10}
 });
 
 export default App;

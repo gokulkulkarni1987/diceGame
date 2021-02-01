@@ -61,7 +61,7 @@ const GameScreen = (props) => {
 
   const renderItemCurrentPlayers = ({index, item}) => {
     const backgroundColor =
-      gameProp.currentPlayer === index ? 'green' : 'yellow';
+      gameProp.currentPlayer === index ? '#9575cd' : '#c7a4ff';
     return (
       <View style={[gameScreenStyles.playerRowStyle, {backgroundColor}]}>
         <NormalTextField>{item.name}</NormalTextField>

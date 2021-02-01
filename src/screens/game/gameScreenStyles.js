@@ -24,7 +24,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     justifyContent: 'space-between',
-    backgroundColor: 'yellow',
+    backgroundColor: '#00e676',
     marginTop: 5,
   },
 });

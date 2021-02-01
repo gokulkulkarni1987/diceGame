@@ -45,7 +45,6 @@ const GameScreen = (props) => {
       }
     });
     return function () {
-      console.log('===================this is called');
       RNShake.removeEventListener('ShakeEvent');
     };
   });

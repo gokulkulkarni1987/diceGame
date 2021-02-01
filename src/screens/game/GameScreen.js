@@ -3,10 +3,11 @@ import {FlatList, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
+import RNShake from 'react-native-shake';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
-import {CREATE_PLAYERS} from './gameActions';
+import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
 
 const GameScreen = (props) => {
@@ -25,18 +26,41 @@ const GameScreen = (props) => {
     });
   };
 
+  useEffect(() => {
+    const {players, currentPlayer, wonPlayers} = gameProp;
+    RNShake.addEventListener('ShakeEvent', () => {
+      if (players.length > 0) {
+        dispatch({
+          type: ROLL_THE_DICE,
+          payload: {
+            players,
+            currentPlayer,
+            wonPlayers,
+            winningPoint: homeProp.winningPoint,
+          },
+        });
+      } else {
+        alert('Game done');
+      }
+    });
+    return () => {
+      RNShake.removeEventListener('ShakeEvent');
+    };
+  });
+
   const renderItem = ({index, item}) => {
     return (
       <View style={gameScreenStyles.playerRowStyle}>
         <NormalTextField>{item.name}</NormalTextField>
         <NormalTextField>{item.pointsWon}</NormalTextField>
-       </View>
-       );
+      </View>
+    );
   };
 
   const keyExtractor = (item, index) => {
     return `${index}_${item.name}`;
   };
+
 
   return (
     <View style={gameScreenStyles.parentStyle}>
@@ -55,8 +79,15 @@ const GameScreen = (props) => {
       <View style={gameScreenStyles.rollViewStyle}>
         <Heading1Text>Shake to roll</Heading1Text>
       </View>
+      <Heading1Text>Playing</Heading1Text>
       <FlatList
         data={gameProp.players}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+      />
+      <Heading1Text>WON</Heading1Text>
+      <FlatList
+        data={gameProp.wonPlayers}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
       />

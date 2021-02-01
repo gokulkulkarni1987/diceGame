@@ -37,7 +37,7 @@ const App = () => {
   return (
     <SafeAreaProvider style={styles.mainParentStyle}>
       <Provider store={storeDetails.store}>
-        <PersistGate loading={null} persistor={storeDetails.persistor}>
+        {/* <PersistGate loading={null} persistor={storeDetails.persistor}> */}
           <View style={styles.mainParentStyle}>
             <NavigationContainer ref={navigationRef}>
               <RootStack.Navigator mode="modal">
@@ -71,7 +71,7 @@ const App = () => {
               </RootStack.Navigator>
             </NavigationContainer>
           </View>
-        </PersistGate>
+        {/* </PersistGate> */}
       </Provider>
     </SafeAreaProvider>
   );

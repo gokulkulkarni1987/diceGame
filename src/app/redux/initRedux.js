@@ -15,7 +15,7 @@ export default function configureStore(onCompletion) {
   const persistedReducer = persistReducer(persistConfig, reducers);
 
   const enhancers = compose(applyMiddleware(sagaMiddleware));
-  let store = createStore(persistedReducer, enhancers);
+  let store = createStore(reducers, enhancers);
   let persistor = persistStore(store);
 
   sagaMiddleware.run(sagas);

@@ -1,7 +1,65 @@
 import {put} from 'redux-saga/effects';
-import {CREATE_PLAYERS_SUCCESS} from './gameActions';
+import {CREATE_PLAYERS_SUCCESS, ROLL_THE_DICE_SUCCESS} from './gameActions';
 
-export function* rollDiceStartedSaga() {}
+export function* rollDiceStartedSaga(action) {
+  let {players, currentPlayer, winningPoint, wonPlayers} = action.payload;
+  const currentPlayerTemp = currentPlayer;
+  const diceNumber = Math.floor(Math.random() * 6) + 1;
+  players[currentPlayer].pointsWon += diceNumber;
+
+  if (!players[currentPlayer].prev1) {
+    players[currentPlayer].prev1 = diceNumber;
+  } else if (!players[currentPlayer].prev2) {
+    players[currentPlayer].prev2 = diceNumber;
+  } else {
+    players[currentPlayer].prev1 = undefined;
+    players[currentPlayer].prev2 = undefined;
+  }
+
+  if (diceNumber !== 6) {
+    if (diceNumber !== 1) {
+      players[currentPlayer].prev1 = undefined;
+      players[currentPlayer].prev2 = undefined;
+    }
+    if (
+      players[currentPlayer].prev1 === 1 &&
+      players[currentPlayer].prev2 === 1
+    ) {
+      currentPlayer += 2;
+      players[currentPlayer].prev1 = undefined;
+      players[currentPlayer].prev2 = undefined;
+    } else {
+      currentPlayer++;
+    }
+  }
+
+  if (players[currentPlayerTemp].pointsWon > winningPoint) {
+    const index = wonPlayers.length + 1;
+    wonPlayers.push({
+      index,
+      ...players[currentPlayerTemp],
+    });
+    players.splice(currentPlayerTemp, 1);
+  }
+
+  if (diceNumber !== 6) {
+    currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
+  }
+
+  // console.log('===========>final ================');
+  // console.log(JSON.stringify(players));
+  // console.log(currentPlayer);
+  // console.log('===========>final ================');
+
+  yield put({
+    type: ROLL_THE_DICE_SUCCESS,
+    payload: {
+      currentPlayer,
+      players,
+      wonPlayers,
+    },
+  });
+}
 
 export function* createPlayers(action) {
   const players = [];

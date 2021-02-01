@@ -3,13 +3,13 @@ import {FlatList, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
+import LottieView from 'lottie-react-native';
 import RNShake from 'react-native-shake';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
-import {CLEAR_GAME, CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
+import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
-import { useFocusEffect } from '@react-navigation/native';
 
 const GameScreen = (props) => {
   const homeProp = useSelector(({home}) => home);
@@ -87,21 +87,58 @@ const GameScreen = (props) => {
           />
         </View>
       </View>
-      <View style={gameScreenStyles.rollViewStyle}>
+      <View style={gameScreenStyles.gameHeaderViewStyle}>
         <Heading1Text>Shake to roll</Heading1Text>
       </View>
-      <Heading1Text>Playing</Heading1Text>
-      <FlatList
-        data={gameProp.players}
-        renderItem={renderItemCurrentPlayers}
-        keyExtractor={keyExtractor}
-      />
-      <Heading1Text>WON</Heading1Text>
-      <FlatList
-        data={gameProp.wonPlayers}
-        renderItem={renderItem}
-        keyExtractor={keyExtractor}
-      />
+
+      <View style={gameScreenStyles.flatlistParentStyle}>
+        <FlatList
+          data={gameProp.players}
+          renderItem={renderItemCurrentPlayers}
+          keyExtractor={keyExtractor}
+          style={gameScreenStyles.flatlistStyle}
+          ListHeaderComponent={
+            <Heading1Text style={gameScreenStyles.gameHeaderViewStyle}>
+              Playing
+            </Heading1Text>
+          }
+          ListEmptyComponent={
+            <View style={gameScreenStyles.winnerEmptyViewStyle}>
+              <LottieView
+                source={require('../../res/lottie/972-done.json')}
+                autoPlay
+                loop
+                style={gameScreenStyles.winnerEmptyLottiViewStyle}
+              />
+              <Text>Game Done</Text>
+            </View>
+          }
+        />
+
+        <FlatList
+          data={gameProp.wonPlayers}
+          renderItem={renderItem}
+          keyExtractor={keyExtractor}
+          style={gameScreenStyles.flatlistStyle}
+          showsVerticalScrollIndicator={true}
+          ListHeaderComponent={
+            <Heading1Text style={gameScreenStyles.gameHeaderViewStyle}>
+              WON
+            </Heading1Text>
+          }
+          ListEmptyComponent={
+            <View style={gameScreenStyles.winnerEmptyViewStyle}>
+              <LottieView
+                source={require('../../res/lottie/winners_empty.json')}
+                autoPlay
+                loop
+                style={gameScreenStyles.winnerEmptyLottiViewStyle}
+              />
+              <Text>No Winners yet</Text>
+            </View>
+          }
+        />
+      </View>
     </View>
   );
 };

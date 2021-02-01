@@ -15,7 +15,7 @@ export default StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'space-between',
   },
-  rollViewStyle: {
+  gameHeaderViewStyle: {
     marginTop: 10,
     padding: 10,
   },
@@ -27,4 +27,8 @@ export default StyleSheet.create({
     backgroundColor: '#00e676',
     marginTop: 5,
   },
+  winnerEmptyViewStyle: {alignSelf: 'stretch', alignItems: 'center'},
+  winnerEmptyLottiViewStyle: {width: 100, height: 100},
+  flatlistStyle: {flex: 1},
+  flatlistParentStyle: {flex: 1, padding: 10},
 });

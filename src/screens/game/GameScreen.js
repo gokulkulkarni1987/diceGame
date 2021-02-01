@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {FlatList, View} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
@@ -7,7 +7,12 @@ import LottieView from 'lottie-react-native';
 import RNShake from 'react-native-shake';
 import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
-import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
+import {
+  CREATE_PLAYERS,
+  ROLL_THE_DICE,
+  CLEAR_PLAYER_SCORED_6,
+  CLEAR_TWICE_ONE,
+} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
 import {TouchableHighlight} from 'react-native-gesture-handler';
 import Heading4Text from '../../components/Heading4Text';
@@ -76,6 +81,32 @@ const GameScreen = (props) => {
   const keyExtractor = (item, index) => {
     return `${index}_${item.name}`;
   };
+
+  if (gameProp.playScoredSix) {
+    Alert.alert(
+      'Six scored!!!',
+      `${gameProp.sixScoredPlayerName} has scored 6, so he will be playing again`,
+      [
+        {
+          text: 'OK',
+          onPress: () => dispatch({type: CLEAR_PLAYER_SCORED_6}),
+        },
+      ],
+    );
+  }
+
+  if (gameProp.playerScored1Twice) {
+    Alert.alert(
+      'Six scored!!!',
+      `${gameProp.playerScored1TwiceName} has scored 1 twice, so he will be be skipping`,
+      [
+        {
+          text: 'OK',
+          onPress: () => dispatch({type: CLEAR_TWICE_ONE}),
+        },
+      ],
+    );
+  }
 
   return (
     <View style={gameScreenStyles.parentStyle}>

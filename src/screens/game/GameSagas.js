@@ -1,9 +1,15 @@
 import {put} from 'redux-saga/effects';
-import {CREATE_PLAYERS_SUCCESS, ROLL_THE_DICE_SUCCESS} from './gameActions';
+import {
+  CREATE_PLAYERS_SUCCESS,
+  PLAYER_SCORED_6,
+  ROLL_THE_DICE_SUCCESS,
+} from './gameActions';
 
 export function* rollDiceStartedSaga(action) {
   let {players, currentPlayer, winningPoint, wonPlayers} = action.payload;
+  const currentPlayingPlayer = players[currentPlayer];
   const currentPlayerTemp = currentPlayer;
+  let hasPlayerFouled = false;
   const diceNumber = Math.floor(Math.random() * 6) + 1;
   players[currentPlayer].pointsWon += diceNumber;
   if (!players[currentPlayer].pointsList) {
@@ -29,6 +35,7 @@ export function* rollDiceStartedSaga(action) {
       players[currentPlayer].prev1 === 1 &&
       players[currentPlayer].prev2 === 1
     ) {
+      hasPlayerFouled = true;
       players[currentPlayer].prev1 = undefined;
       players[currentPlayer].prev2 = undefined;
       currentPlayer += 2;
@@ -54,6 +61,9 @@ export function* rollDiceStartedSaga(action) {
       currentPlayer,
       players,
       wonPlayers,
+      diceNumber,
+      name: currentPlayingPlayer.name,
+      playerScored1Twice: hasPlayerFouled,
     },
   });
 }

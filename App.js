@@ -38,39 +38,39 @@ const App = () => {
     <SafeAreaProvider style={styles.mainParentStyle}>
       <Provider store={storeDetails.store}>
         {/* <PersistGate loading={null} persistor={storeDetails.persistor}> */}
-          <View style={styles.mainParentStyle}>
-            <NavigationContainer ref={navigationRef}>
-              <RootStack.Navigator mode="modal">
-                <RootStack.Screen
-                  name="Main"
-                  component={mainStackScreen}
-                  options={{headerShown: false}}
-                />
-                <RootStack.Screen
-                  name="PlayersModal"
-                  component={PlayersModalScreen}
-                  options={{
-                    title: 'Players',
-                    headerLeft: null,
-                    headerRight: () => {
-                      return (
-                        <Icon
-                          name="close"
-                          type="font-awesome"
-                          style={styles.closeModalIconStyle}
-                          onPress={() => {
-                            if (navigationRef) {
-                              navigationRef.current.goBack();
-                            }
-                          }}
-                        />
-                      );
-                    },
-                  }}
-                />
-              </RootStack.Navigator>
-            </NavigationContainer>
-          </View>
+        <View style={styles.mainParentStyle}>
+          <NavigationContainer ref={navigationRef}>
+            <RootStack.Navigator mode="modal">
+              <RootStack.Screen
+                name="Main"
+                component={mainStackScreen}
+                options={{headerShown: false}}
+              />
+              <RootStack.Screen
+                name="PlayersModal"
+                component={PlayersModalScreen}
+                options={{
+                  title: 'Players',
+                  headerLeft: null,
+                  headerRight: () => {
+                    return (
+                      <Icon
+                        name="close"
+                        type="font-awesome"
+                        style={styles.closeModalIconStyle}
+                        onPress={() => {
+                          if (navigationRef) {
+                            navigationRef.current.goBack();
+                          }
+                        }}
+                      />
+                    );
+                  },
+                }}
+              />
+            </RootStack.Navigator>
+          </NavigationContainer>
+        </View>
         {/* </PersistGate> */}
       </Provider>
     </SafeAreaProvider>
@@ -79,7 +79,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   mainParentStyle: {flex: 1, justifyContent: 'center', alignItems: 'stretch'},
-  closeModalIconStyle: {padding: 10}
+  closeModalIconStyle: {padding: 10},
 });
 
 export default App;

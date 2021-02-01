@@ -1,6 +1,8 @@
 import {
   CLEAR_GAME,
+  CLEAR_PLAYER_SCORED_6,
   CREATE_PLAYERS_SUCCESS,
+  PLAYER_SCORED_6,
   ROLL_THE_DICE,
   ROLL_THE_DICE_SUCCESS,
 } from './gameActions';
@@ -11,6 +13,10 @@ const INITIAL_STATE = {
   players: [],
   generatedValue: 0,
   wonPlayers: [],
+  playScoredSix: false,
+  sixScoredPlayerName: '',
+  playerScored1Twice: false,
+  playerScored1TwiceName: '',
 };
 
 export default (state, action) => {
@@ -37,6 +43,10 @@ export default (state, action) => {
         players: action.payload.players,
         currentPlayer: action.payload.currentPlayer,
         wonPlayers: action.payload.wonPlayers,
+        playScoredSix: action.payload.diceNumber === 6,
+        sixScoredPlayerName: action.payload.name,
+        playerScored1Twice: action.payload.playerScored1Twice,
+        playerScored1TwiceName: action.payload.name,
       };
       break;
     case CLEAR_GAME:
@@ -46,6 +56,13 @@ export default (state, action) => {
         players: [],
         generatedValue: 0,
         wonPlayers: [],
+      };
+      break;
+    case CLEAR_PLAYER_SCORED_6:
+      state = {
+        ...state,
+        playScoredSix: false,
+        sixScoredPlayerName: '',
       };
       break;
     default:

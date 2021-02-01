@@ -6,6 +6,10 @@ export function* rollDiceStartedSaga(action) {
   const currentPlayerTemp = currentPlayer;
   const diceNumber = Math.floor(Math.random() * 6) + 1;
   players[currentPlayer].pointsWon += diceNumber;
+  if (!players[currentPlayer].pointsList) {
+    players[currentPlayer].pointsList = [];
+  }
+  players[currentPlayer].pointsList.push(diceNumber);
 
   if (!players[currentPlayer].prev1) {
     players[currentPlayer].prev1 = diceNumber;

@@ -25,9 +25,9 @@ export function* rollDiceStartedSaga(action) {
       players[currentPlayer].prev1 === 1 &&
       players[currentPlayer].prev2 === 1
     ) {
-      currentPlayer += 2;
       players[currentPlayer].prev1 = undefined;
       players[currentPlayer].prev2 = undefined;
+      currentPlayer += 2;
     } else {
       currentPlayer++;
     }

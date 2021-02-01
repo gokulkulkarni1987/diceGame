@@ -10,6 +10,7 @@ import NormalTextField from '../../components/NormalTextField';
 import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
 import {TouchableHighlight} from 'react-native-gesture-handler';
+import Heading4Text from '../../components/Heading4Text';
 
 const GameScreen = (props) => {
   const homeProp = useSelector(({home}) => home);
@@ -82,6 +83,11 @@ const GameScreen = (props) => {
         <Text>Total no of Players: {homeProp.playerCount}</Text>
         <Text>Winning points: {homeProp.winningPoint}</Text>
       </View>
+      {gameProp.players[gameProp.currentPlayer] && (
+        <Heading4Text>{`It's ${
+          gameProp.players[gameProp.currentPlayer].name
+        }'s turn now`}</Heading4Text>
+      )}
       <View style={gameScreenStyles.gameHeaderViewStyle}>
         <Heading1Text>Shake to roll</Heading1Text>
         <LottieView

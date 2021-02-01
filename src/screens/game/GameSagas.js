@@ -63,7 +63,7 @@ export function* createPlayers(action) {
   const playerCount = action.payload;
   for (let i = 0; i < playerCount; i++) {
     players.push({
-      name: `Player${i + 1}`,
+      name: `Player-${i + 1}`,
       pointsWon: 0,
       prev1: 0,
       prev2: 0,

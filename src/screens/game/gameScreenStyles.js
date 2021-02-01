@@ -16,8 +16,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   gameHeaderViewStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     marginTop: 10,
-    padding: 10,
+  },
+  gameHeaderTextViewStyle: {
+    marginTop: 10,
   },
   playerRowStyle: {
     flex: 1,
@@ -29,6 +34,7 @@ export default StyleSheet.create({
   },
   winnerEmptyViewStyle: {alignSelf: 'stretch', alignItems: 'center'},
   winnerEmptyLottiViewStyle: {width: 100, height: 100},
+  rollLottiViewStyle: {width: 70, height: 70},
   flatlistStyle: {flex: 1},
   flatlistParentStyle: {flex: 1, padding: 10},
 });

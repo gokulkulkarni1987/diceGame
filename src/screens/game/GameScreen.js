@@ -76,32 +76,28 @@ const GameScreen = (props) => {
   return (
     <View style={gameScreenStyles.parentStyle}>
       <View style={gameScreenStyles.topViewStyle}>
-        <View>
-          <Text>Total no of Players: {homeProp.playerCount}</Text>
-          <Text>Winning points: {homeProp.winningPoint}</Text>
-        </View>
-        <View>
-          <ButtonComponent
-            title={'Show Players'}
-            onPress={onShowPlayersClicked}
-          />
-        </View>
+        <Text>Total no of Players: {homeProp.playerCount}</Text>
+        <Text>Winning points: {homeProp.winningPoint}</Text>
       </View>
       <View style={gameScreenStyles.gameHeaderViewStyle}>
         <Heading1Text>Shake to roll</Heading1Text>
+        <LottieView
+          source={require('../../res/lottie/14109-dice-rollllinnnggg.json')}
+          autoPlay
+          loop
+          style={gameScreenStyles.rollLottiViewStyle}
+        />
       </View>
 
       <View style={gameScreenStyles.flatlistParentStyle}>
+        <Heading1Text style={gameScreenStyles.gameHeaderTextViewStyle}>
+          Playing
+        </Heading1Text>
         <FlatList
           data={gameProp.players}
           renderItem={renderItemCurrentPlayers}
           keyExtractor={keyExtractor}
           style={gameScreenStyles.flatlistStyle}
-          ListHeaderComponent={
-            <Heading1Text style={gameScreenStyles.gameHeaderViewStyle}>
-              Playing
-            </Heading1Text>
-          }
           ListEmptyComponent={
             <View style={gameScreenStyles.winnerEmptyViewStyle}>
               <LottieView
@@ -114,18 +110,15 @@ const GameScreen = (props) => {
             </View>
           }
         />
-
+        <Heading1Text style={gameScreenStyles.gameHeaderTextViewStyle}>
+          WON
+        </Heading1Text>
         <FlatList
           data={gameProp.wonPlayers}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           style={gameScreenStyles.flatlistStyle}
           showsVerticalScrollIndicator={true}
-          ListHeaderComponent={
-            <Heading1Text style={gameScreenStyles.gameHeaderViewStyle}>
-              WON
-            </Heading1Text>
-          }
           ListEmptyComponent={
             <View style={gameScreenStyles.winnerEmptyViewStyle}>
               <LottieView

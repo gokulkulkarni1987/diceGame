@@ -10,6 +10,8 @@ export function* createPlayers(action) {
     players.push({
       name: `Player${i + 1}`,
       pointsWon: 0,
+      prev1: 0,
+      prev2: 0,
     });
   }
   yield put({type: CREATE_PLAYERS_SUCCESS, payload: players});

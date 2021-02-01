@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import ButtonComponent from '../../components/ButtonComponent';
+import Heading1Text from '../../components/Heading1Text';
+import NormalTextField from '../../components/NormalTextField';
 import {CREATE_PLAYERS} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
 
@@ -23,6 +25,19 @@ const GameScreen = (props) => {
     });
   };
 
+  const renderItem = ({index, item}) => {
+    return (
+      <View style={gameScreenStyles.playerRowStyle}>
+        <NormalTextField>{item.name}</NormalTextField>
+        <NormalTextField>{item.pointsWon}</NormalTextField>
+       </View>
+       );
+  };
+
+  const keyExtractor = (item, index) => {
+    return `${index}_${item.name}`;
+  };
+
   return (
     <View style={gameScreenStyles.parentStyle}>
       <View style={gameScreenStyles.topViewStyle}>
@@ -37,6 +52,14 @@ const GameScreen = (props) => {
           />
         </View>
       </View>
+      <View style={gameScreenStyles.rollViewStyle}>
+        <Heading1Text>Shake to roll</Heading1Text>
+      </View>
+      <FlatList
+        data={gameProp.players}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+      />
     </View>
   );
 };

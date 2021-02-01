@@ -1,4 +1,5 @@
 import {
+  CLEAR_GAME,
   CREATE_PLAYERS_SUCCESS,
   ROLL_THE_DICE,
   ROLL_THE_DICE_SUCCESS,
@@ -36,6 +37,15 @@ export default (state, action) => {
         players: action.payload.players,
         currentPlayer: action.payload.currentPlayer,
         wonPlayers: action.payload.wonPlayers,
+      };
+      break;
+    case CLEAR_GAME:
+      state = {
+        isRollInProgress: false,
+        currentPlayer: 0,
+        players: [],
+        generatedValue: 0,
+        wonPlayers: [],
       };
       break;
     default:

@@ -7,8 +7,9 @@ import RNShake from 'react-native-shake';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
-import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
+import {CLEAR_GAME, CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
+import { useFocusEffect } from '@react-navigation/native';
 
 const GameScreen = (props) => {
   const homeProp = useSelector(({home}) => home);
@@ -43,7 +44,8 @@ const GameScreen = (props) => {
         alert('Game done');
       }
     });
-    return () => {
+    return function () {
+      console.log('===================this is called');
       RNShake.removeEventListener('ShakeEvent');
     };
   });
@@ -57,10 +59,20 @@ const GameScreen = (props) => {
     );
   };
 
+  const renderItemCurrentPlayers = ({index, item}) => {
+    const backgroundColor =
+      gameProp.currentPlayer === index ? 'green' : 'yellow';
+    return (
+      <View style={[gameScreenStyles.playerRowStyle, {backgroundColor}]}>
+        <NormalTextField>{item.name}</NormalTextField>
+        <NormalTextField>{item.pointsWon}</NormalTextField>
+      </View>
+    );
+  };
+
   const keyExtractor = (item, index) => {
     return `${index}_${item.name}`;
   };
-
 
   return (
     <View style={gameScreenStyles.parentStyle}>
@@ -82,7 +94,7 @@ const GameScreen = (props) => {
       <Heading1Text>Playing</Heading1Text>
       <FlatList
         data={gameProp.players}
-        renderItem={renderItem}
+        renderItem={renderItemCurrentPlayers}
         keyExtractor={keyExtractor}
       />
       <Heading1Text>WON</Heading1Text>

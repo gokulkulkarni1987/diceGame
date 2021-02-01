@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import InputField from '../../components/InputField';
+import { CLEAR_GAME } from '../game/gameActions';
 import {LET_THE_GAME_BEGIN} from './HomeActions';
 import homeScreenStyles from './homeScreenStyles';
 
@@ -17,6 +18,7 @@ const HomeScreen = (props) => {
       alert('Please enter all details');
       return;
     }
+    dispatch({type: CLEAR_GAME});
     propsRef.navigation.navigate('Game', {
       playerCount,
       winningPoint,

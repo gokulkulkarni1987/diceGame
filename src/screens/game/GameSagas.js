@@ -31,6 +31,7 @@ export function* rollDiceStartedSaga(action) {
     } else {
       currentPlayer++;
     }
+    currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
   }
 
   if (players[currentPlayerTemp].pointsWon > winningPoint) {
@@ -40,16 +41,8 @@ export function* rollDiceStartedSaga(action) {
       ...players[currentPlayerTemp],
     });
     players.splice(currentPlayerTemp, 1);
-  }
-
-  if (diceNumber !== 6) {
     currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
   }
-
-  // console.log('===========>final ================');
-  // console.log(JSON.stringify(players));
-  // console.log(currentPlayer);
-  // console.log('===========>final ================');
 
   yield put({
     type: ROLL_THE_DICE_SUCCESS,

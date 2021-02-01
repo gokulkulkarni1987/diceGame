@@ -9,4 +9,10 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
   },
+  topViewStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
+  },
 });

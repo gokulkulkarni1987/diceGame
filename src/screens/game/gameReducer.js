@@ -1,4 +1,4 @@
-import {CREATE_PLAYERS} from './gameActions';
+import {CREATE_PLAYERS_SUCCESS} from './gameActions';
 
 const INITIAL_STATE = {
   isRollInProgress: false,
@@ -10,19 +10,10 @@ export default (state, action) => {
     state = INITIAL_STATE;
   }
   switch (action.type) {
-    case CREATE_PLAYERS:
-      console.log(`inside gameReducer: `, action);
-      const players = [];
-      const playerCount = action.payload;
-      for (let i = 0; i < playerCount; i++) {
-        players.push({
-          name: `Player${i + 1}`,
-          pointsWon: 0,
-        });
-      }
+    case CREATE_PLAYERS_SUCCESS:
       state = {
         ...state,
-        players,
+        players: action.payload,
       };
       break;
     default:

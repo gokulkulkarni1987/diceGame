@@ -5,7 +5,6 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import LottieView from 'lottie-react-native';
 import RNShake from 'react-native-shake';
-import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
 import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
@@ -20,13 +19,6 @@ const GameScreen = (props) => {
   useEffect(() => {
     dispatch({type: CREATE_PLAYERS, payload: homeProp.playerCount});
   }, [dispatch, homeProp.playerCount]);
-
-  const onShowPlayersClicked = () => {
-    const {players} = gameProp;
-    props.navigation.navigate('PlayersModal', {
-      players,
-    });
-  };
 
   useEffect(() => {
     const {players, currentPlayer, wonPlayers} = gameProp;

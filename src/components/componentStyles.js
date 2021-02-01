@@ -5,4 +5,5 @@ export default StyleSheet.create({
   normalTextStyle: {fontSize: 15},
   inputStyle: {borderWidth: 1, borderRadius: 5, padding: 5},
   inputContainerStyle: {borderBottomWidth: 0},
+  heading4TextStyle: {fontSize: 20},
 });

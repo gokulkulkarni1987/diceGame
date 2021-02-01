@@ -10,6 +10,7 @@ import Heading1Text from '../../components/Heading1Text';
 import NormalTextField from '../../components/NormalTextField';
 import {CREATE_PLAYERS, ROLL_THE_DICE} from './gameActions';
 import gameScreenStyles from './gameScreenStyles';
+import {TouchableHighlight} from 'react-native-gesture-handler';
 
 const GameScreen = (props) => {
   const homeProp = useSelector(({home}) => home);
@@ -49,12 +50,20 @@ const GameScreen = (props) => {
     };
   });
 
+  const onPlayerPressed = (player) => {
+    props.navigation.navigate('PlayersModal', {
+      player,
+    });
+  };
+
   const renderItem = ({index, item}) => {
     return (
-      <View style={gameScreenStyles.playerRowStyle}>
-        <NormalTextField>{item.name}</NormalTextField>
-        <NormalTextField>{item.pointsWon}</NormalTextField>
-      </View>
+      <TouchableHighlight onPress={() => onPlayerPressed(item)}>
+        <View style={gameScreenStyles.playerRowStyle}>
+          <NormalTextField>{item.name}</NormalTextField>
+          <NormalTextField>{item.pointsWon}</NormalTextField>
+        </View>
+      </TouchableHighlight>
     );
   };
 
@@ -62,10 +71,12 @@ const GameScreen = (props) => {
     const backgroundColor =
       gameProp.currentPlayer === index ? '#9575cd' : '#c7a4ff';
     return (
-      <View style={[gameScreenStyles.playerRowStyle, {backgroundColor}]}>
-        <NormalTextField>{item.name}</NormalTextField>
-        <NormalTextField>{item.pointsWon}</NormalTextField>
-      </View>
+      <TouchableHighlight onPress={() => onPlayerPressed(item)}>
+        <View style={[gameScreenStyles.playerRowStyle, {backgroundColor}]}>
+          <NormalTextField>{item.name}</NormalTextField>
+          <NormalTextField>{item.pointsWon}</NormalTextField>
+        </View>
+      </TouchableHighlight>
     );
   };
 

@@ -97,7 +97,7 @@ const GameScreen = (props) => {
 
   if (gameProp.playerScored1Twice) {
     Alert.alert(
-      'Six scored!!!',
+      'Fouled!!!',
       `${gameProp.playerScored1TwiceName} has scored 1 twice, so he will be be skipping`,
       [
         {

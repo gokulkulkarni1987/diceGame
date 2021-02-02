@@ -1,9 +1,5 @@
 import {put} from 'redux-saga/effects';
-import {
-  CREATE_PLAYERS_SUCCESS,
-  PLAYER_SCORED_6,
-  ROLL_THE_DICE_SUCCESS,
-} from './gameActions';
+import {CREATE_PLAYERS_SUCCESS, ROLL_THE_DICE_SUCCESS} from './gameActions';
 
 export function* rollDiceStartedSaga(action) {
   let {players, currentPlayer, winningPoint, wonPlayers} = action.payload;
@@ -17,33 +13,38 @@ export function* rollDiceStartedSaga(action) {
   }
   players[currentPlayer].pointsList.push(diceNumber);
 
-  if (!players[currentPlayer].prev1) {
-    players[currentPlayer].prev1 = diceNumber;
-  } else if (!players[currentPlayer].prev2) {
-    players[currentPlayer].prev2 = diceNumber;
+  if (diceNumber === 1) {
+    if (players[currentPlayer].prev1 === 1) {
+      hasPlayerFouled = true;
+      players[currentPlayer].prev2 = 1;
+    } else {
+      players[currentPlayer].prev1 = 1;
+    }
   } else {
     players[currentPlayer].prev1 = undefined;
     players[currentPlayer].prev2 = undefined;
   }
-
-  if (diceNumber !== 6) {
-    if (diceNumber !== 1) {
-      players[currentPlayer].prev1 = undefined;
-      players[currentPlayer].prev2 = undefined;
-    }
-    if (
-      players[currentPlayer].prev1 === 1 &&
-      players[currentPlayer].prev2 === 1
-    ) {
-      hasPlayerFouled = true;
-      players[currentPlayer].prev1 = undefined;
-      players[currentPlayer].prev2 = undefined;
-      currentPlayer += 2;
-    } else {
+  if (diceNumber !== 6 || players[currentPlayerTemp].pointsWon > winningPoint) {
+    let tempCount = 0;
+    do {
       currentPlayer++;
+      currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
+      tempCount++;
+    } while (
+      players[currentPlayer].prev1 === 1 &&
+      players[currentPlayer].prev2 === 1 &&
+      tempCount < players.length
+    );
+    if (tempCount >= players.length) {
+      for (let i = 0; i < players.length; i++) {
+        players[i].prev1 = undefined;
+        players[i].prev2 = undefined;
+      }
     }
-    currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
   }
+
+  const hasScored6 =
+    diceNumber === 6 && players[currentPlayerTemp].pointsWon <= winningPoint;
 
   if (players[currentPlayerTemp].pointsWon > winningPoint) {
     const index = wonPlayers.length + 1;
@@ -52,7 +53,9 @@ export function* rollDiceStartedSaga(action) {
       ...players[currentPlayerTemp],
     });
     players.splice(currentPlayerTemp, 1);
-    currentPlayer = currentPlayer >= players.length ? 0 : currentPlayer;
+    currentPlayer--;
+    currentPlayer =
+      currentPlayer >= players.length || currentPlayer < 0 ? 0 : currentPlayer;
   }
 
   yield put({
@@ -62,6 +65,7 @@ export function* rollDiceStartedSaga(action) {
       players,
       wonPlayers,
       diceNumber,
+      hasScored6,
       name: currentPlayingPlayer.name,
       playerScored1Twice: hasPlayerFouled,
     },

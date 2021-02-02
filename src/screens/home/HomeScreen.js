@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import ButtonComponent from '../../components/ButtonComponent';
 import Heading1Text from '../../components/Heading1Text';
 import InputField from '../../components/InputField';
-import { CLEAR_GAME } from '../game/gameActions';
+import {CLEAR_GAME} from '../game/gameActions';
 import {LET_THE_GAME_BEGIN} from './HomeActions';
 import homeScreenStyles from './homeScreenStyles';
 
@@ -33,11 +33,12 @@ const HomeScreen = (props) => {
   };
 
   const onPlayerCountChange = (playerCountVal) => {
-    setPlayerCount(playerCountVal);
+    setPlayerCount(playerCountVal.replace(/[^0-9]/g, ''));
   };
 
   const onWinningPointsChange = (winningPointVal) => {
-    setWinningPoint(winningPointVal);
+    console.log('this. sindei', winningPointVal.replace(/[^0-9]/g, ''));
+    setWinningPoint(winningPointVal.replace(/[^0-9]/g, ''));
   };
 
   return (
@@ -50,12 +51,16 @@ const HomeScreen = (props) => {
         label="Enter Number of Players"
         style={homeScreenStyles.inputFieldStyle}
         onChangeText={onPlayerCountChange}
+        keyboardType={'number-pad'}
+        value={playerCount}
       />
       <InputField
         placeholder="Winning Points"
         label="Enter the Winning points"
         style={homeScreenStyles.inputFieldStyle}
         onChangeText={onWinningPointsChange}
+        keyboardType={'number-pad'}
+        value={winningPoint}
       />
       <ButtonComponent
         title="Start the Game"

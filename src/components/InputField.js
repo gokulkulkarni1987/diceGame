@@ -10,6 +10,8 @@ const InputField = (props) => {
       style={[props.style, componentStyles.inputStyle]}
       inputContainerStyle={componentStyles.inputContainerStyle}
       onChangeText={props.onChangeText}
+      keyboardType={props.keyboardType}
+      value={props.value}
     />
   );
 };

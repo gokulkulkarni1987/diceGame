@@ -16,6 +16,7 @@ import {
 import gameScreenStyles from './gameScreenStyles';
 import {TouchableHighlight} from 'react-native-gesture-handler';
 import Heading4Text from '../../components/Heading4Text';
+import ButtonComponent from '../../components/ButtonComponent';
 
 const GameScreen = (props) => {
   const homeProp = useSelector(({home}) => home);
@@ -27,26 +28,30 @@ const GameScreen = (props) => {
   }, [dispatch, homeProp.playerCount]);
 
   useEffect(() => {
-    const {players, currentPlayer, wonPlayers} = gameProp;
     RNShake.addEventListener('ShakeEvent', () => {
-      if (players.length > 0) {
-        dispatch({
-          type: ROLL_THE_DICE,
-          payload: {
-            players,
-            currentPlayer,
-            wonPlayers,
-            winningPoint: homeProp.winningPoint,
-          },
-        });
-      } else {
-        alert('Game done');
-      }
+      shakeItUp();
     });
     return function () {
       RNShake.removeEventListener('ShakeEvent');
     };
   });
+
+  const shakeItUp = () => {
+    const {players, currentPlayer, wonPlayers} = gameProp;
+    if (players.length > 0) {
+      dispatch({
+        type: ROLL_THE_DICE,
+        payload: {
+          players,
+          currentPlayer,
+          wonPlayers,
+          winningPoint: homeProp.winningPoint,
+        },
+      });
+    } else {
+      alert('Game done');
+    }
+  };
 
   const onPlayerPressed = (player) => {
     props.navigation.navigate('PlayersModal', {
@@ -120,6 +125,8 @@ const GameScreen = (props) => {
         }'s turn now`}</Heading4Text>
       )}
       <View style={gameScreenStyles.gameHeaderViewStyle}>
+        <ButtonComponent title="Shake" onPress={() => shakeItUp()} />
+        <Text>OR</Text>
         <Heading1Text>Shake to roll</Heading1Text>
         <LottieView
           source={require('../../res/lottie/14109-dice-rollllinnnggg.json')}

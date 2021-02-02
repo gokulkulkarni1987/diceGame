@@ -8,6 +8,11 @@ export default StyleSheet.create({
     backgroundColor: 'white',
   },
   winnerLottieStyle: {width: 200, height: 200},
-  pointsListStyle: {flexDirection: 'row', marginTop: 10},
+  pointsListStyle: {
+    flexDirection: 'row',
+    marginTop: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
   textViewStyles: {marginTop: 10},
 });

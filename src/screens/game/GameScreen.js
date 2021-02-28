@@ -36,6 +36,13 @@ const GameScreen = (props) => {
     };
   });
 
+  useEffect(() => {
+    const {route} = props;
+    const {params} = route;
+    const {playerCount, winningPoint} = params;
+    alert(`playerCount: ${playerCount} & winningPoint: ${winningPoint}`);
+  }, [props]);
+
   const shakeItUp = () => {
     const {players, currentPlayer, wonPlayers} = gameProp;
     if (players.length > 0) {
@@ -181,6 +188,11 @@ const GameScreen = (props) => {
       </View>
     </View>
   );
+};
+
+GameScreen.whyDidYouRender = {
+  logOnDifferentValues: true,
+  customName: 'FlatList',
 };
 
 export default GameScreen;

@@ -16,9 +16,20 @@ import HomeScreen from './src/screens/home/HomeScreen';
 import GameScreen from './src/screens/game/GameScreen';
 import PlayersModalScreen from './src/screens/players/PlayersModalScreen';
 import initRedux from './src/app/redux/initRedux';
+import * as ReactRedux from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {Icon} from 'react-native-elements';
 import {navigationRef} from './RootNavigation';
+import ClassComponent from './src/screens/test/ClassComponent';
+import VirtualList from './src/screens/test/VirtualList';
+
+if (process.env.NODE_ENV === 'development') {
+  const whyDidYouRender = require('@welldone-software/why-did-you-render');
+  whyDidYouRender(React, {
+    trackAllPureComponents: true,
+    trackExtraHooks: [[ReactRedux, 'useSelector']],
+  });
+}
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -28,18 +39,37 @@ const mainStackScreen = () => {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Game" component={GameScreen} />
+      <Stack.Screen name="ClassComp" component={ClassComponent} />
+      <Stack.Screen name="VirtualList" component={VirtualList} />
     </Stack.Navigator>
   );
 };
 
 const App = () => {
   const storeDetails = initRedux();
+  const deepLinking = {
+    prefixes: ['game://'],
+    config: {
+      Main: {
+        screens: {
+          Game: {
+            path: 'Game/:playerCount/:winningPoint',
+            params: {
+              playerCount: null,
+              winningPoint: null,
+            },
+          },
+        },
+      },
+      PlayersModal: 'PlayersModal',
+    },
+  };
   return (
     <SafeAreaProvider style={styles.mainParentStyle}>
       <Provider store={storeDetails.store}>
         {/* <PersistGate loading={null} persistor={storeDetails.persistor}> */}
         <View style={styles.mainParentStyle}>
-          <NavigationContainer ref={navigationRef}>
+          <NavigationContainer linking={deepLinking} ref={navigationRef}>
             <RootStack.Navigator mode="modal">
               <RootStack.Screen
                 name="Main"
